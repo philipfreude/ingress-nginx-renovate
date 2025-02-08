@@ -6,4 +6,4 @@ dependencies:
   - name: ingress-nginx
     repository: https://kubernetes.github.io/ingress-nginx
     # https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog
-    version: 4.11.3
+    version: 4.12.0
