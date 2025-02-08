@@ -33,6 +33,7 @@
         'ingress-nginx',
       ],
       extractVersion: '(helm-chart-)?(?<version>.*)$',
+      sourceDirectory: 'charts/ingress-nginx',
       changelogUrl: 'https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog',
     },
   ],
