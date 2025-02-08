@@ -2,5 +2,5 @@ ingress-nginx:
   controller:
     image:
       repository: registry.k8s.io/ingress-nginx/controller
-      tag: "v1.11.3"
+      tag: "v1.12.0"
       digest: ""
