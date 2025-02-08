@@ -1,0 +1,39 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+    ':disableRateLimiting',
+  ],
+  kubernetes: {
+    fileMatch: [
+      '.+\\.yaml$',
+    ],
+  },
+  packageRules: [
+    {
+      groupName: 'ingress-nginx-group',
+      matchFileNames: [
+        '**',
+      ],
+    },
+    {
+      matchDatasources: [
+        'docker',
+      ],
+      matchPackageNames: [
+        'registry.k8s.io/ingress-nginx/controller',
+      ],
+      extractVersion: '(controller-)?(?<version>v.*)$',
+    },
+    {
+      matchDatasources: [
+        'helm',
+      ],
+      matchPackageNames: [
+        'ingress-nginx',
+      ],
+      extractVersion: '(helm-chart-)?(?<version>.*)$',
+      changelogUrl: 'https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog',
+    },
+  ],
+}
