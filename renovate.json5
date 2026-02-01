@@ -11,12 +11,6 @@
   },
   packageRules: [
     {
-      groupName: 'ingress-nginx-group',
-      matchFileNames: [
-        '**',
-      ],
-    },
-    {
       matchDatasources: [
         'docker',
       ],
@@ -24,6 +18,7 @@
         'registry.k8s.io/ingress-nginx/controller',
       ],
       extractVersion: '(controller-)?(?<version>v.*)$',
+      groupName: 'ingress-nginx-group',
     },
     {
       matchDatasources: [
@@ -35,6 +30,7 @@
       extractVersion: '(helm-chart-)?(?<version>.*)$',
       sourceDirectory: 'charts/ingress-nginx',
       changelogUrl: 'https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog',
+      groupName: 'ingress-nginx-group',
     },
   ],
 }
